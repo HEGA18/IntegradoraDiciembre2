@@ -1,0 +1,45 @@
+{% extends './base.html' %}
+
+{% block title %}Registrar Cita{% endblock %}
+
+{% block body %}
+
+<center><h1>Cancelar cita</h1></center>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container">
+
+    
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <form action="/FuncioncancelarCita" method="POST">
+                    <div class="mb-3">
+                        <label for="Clinica" class="form-label">ID Cita</label>
+                        <input type="text" class="form-control" name="IdCita" aria-describedby="emailHelp" placeholder="ID cita">
+                    </div>
+                    <div class="mb-3">
+                        <label for="consultorio" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" name="TelefonoPaciente" aria-describedby="emailHelp" placeholder="Telefono">
+                    </div>
+                    <br/>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Cancelar cita</button>
+                        <button type="reset" class="btn btn-danger">Borrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

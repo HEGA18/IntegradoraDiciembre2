@@ -1,0 +1,34 @@
+{% extends './base.html' %}
+
+{% block title %}registros{% endblock %}
+
+{% block body %}
+
+<h1>Seccion de clinicas</h1>
+
+<div class="container py-4">
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Codigo clinica</th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Nombre Clinica</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for clinica in clinicas %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ clinica.0 }}</td>
+        <td>{{ clinica.1 }}</td>
+        <td>{{ clinica.2 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

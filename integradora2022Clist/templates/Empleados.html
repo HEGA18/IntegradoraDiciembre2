@@ -1,0 +1,88 @@
+{% extends './base-admin.html' %}
+
+{% block title %}Empleados{% endblock %}
+
+{% block body %}
+
+<center><h1>Registrar y Editar Empleados</h1></center>    
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container">
+
+    
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <form action="/FuncionEmpleados" method="POST">
+                    <div class="mb-3">
+                        <label for="Clinica" class="form-label">ID del rol del Empleado</label>
+                        <input type="text" class="form-control" name="IdRol" aria-describedby="emailHelp" placeholder="Id rol empleado">
+                    </div>
+                    <div class="mb-3">
+                        <label for="consultorio" class="form-label">Nombre de Empleado</label>
+                        <input type="text" class="form-control" name="NombreEmpleado" aria-describedby="emailHelp" placeholder="Nombre empleado">
+                    </div>
+                    <div class="mb-3">
+                        <label for="paciente" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" name="Tel" aria-describedby="emailHelp" placeholder="Telefono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" name="Usuario" aria-describedby="emailHelp" placeholder="Usuario">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Contrasenia</label>
+                        <input type="text" class="form-control" name="Contrasenia" aria-describedby="emailHelp" placeholder="Contrasenia">
+                    </div>
+                    <br/>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="reset" class="btn btn-danger">Borrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Id empleado</th>
+                <th scope="col">Id rol</th>
+                <th scope="col">nombre</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Contrasenia</th>
+                <th scope="col">Operacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <th scope="row"></th>
+                <td>{{ empleado.0 }}</td>
+                <td>{{ empleado.1 }}</td>
+                <td>{{ empleado.2 }}</td>
+                <td>{{ empleado.3 }}</td>
+                <td>{{ empleado.4 }}</td>
+                <td>{{ empleado.5 }}</td>
+                <td>
+                    <a href="/EditarEmpleados/{{ empleado.0 }}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+{% endblock %}

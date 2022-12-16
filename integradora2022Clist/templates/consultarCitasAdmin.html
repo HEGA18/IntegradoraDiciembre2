@@ -1,0 +1,46 @@
+{% extends './base-admin.html' %}
+
+{% block title %}registros{% endblock %}
+
+{% block body %}
+
+<h1>Seccion de citas Admin</h1>
+
+<div class="container py-4">
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Id Cita</th>
+        <th scope="col">Id clinica</th>
+        <th scope="col">Id Consultorio</th>
+        <th scope="col">Id empleado</th>
+        <th scope="col">Fecha y hora</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cita in citas %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ cita.0 }}</td>
+        <td>{{ cita.1 }}</td>
+        <td>{{ cita.2 }}</td>
+        <td>{{ cita.3 }}</td>
+        <td>{{ cita.4 }}</td>
+        <td>{{ cita.5 }}</td>
+        <td>{{ cita.6 }}</td>
+        <td>{{ cita.7 }}</td>
+        <td>{{ cita.8 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

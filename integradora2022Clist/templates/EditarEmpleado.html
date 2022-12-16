@@ -1,0 +1,57 @@
+{% extends './base-admin.html' %}
+
+{% block title %}Empleados{% endblock %}
+
+{% block body %}
+
+<center><h1>Registrar y Editar Empleados</h1></center>    
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container">
+
+    
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <form action="/ActualizarEmpleados/{{ empleado.0 }}" method="POST">
+                    <div class="mb-3">
+                        <label for="Clinica" class="form-label">ID del rol del Empleado</label>
+                        <input type="text" class="form-control" name="IdRol" aria-describedby="emailHelp" placeholder="Id rol empleado" value="{{ empleado.1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="consultorio" class="form-label">Nombre de Empleado</label>
+                        <input type="text" class="form-control" name="NombreEmpleado" aria-describedby="emailHelp" placeholder="Nombre empleado" value="{{ empleado.2 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="paciente" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" name="Tel" aria-describedby="emailHelp" placeholder="Telefono" value="{{ empleado.3 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" name="Usuario" aria-describedby="emailHelp" placeholder="Usuario" value="{{ empleado.4 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Contrasenia</label>
+                        <input type="text" class="form-control" name="Contrasenia" aria-describedby="emailHelp" placeholder="Contrasenia" value="{{ empleado.5 }}">
+                    </div>
+                    <br/>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="reset" class="btn btn-danger">Borrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends './base.html' %}
+
+{% block title %}registros{% endblock %}
+
+{% block body %}
+
+<h1>Seccion de servicios y costos</h1>
+
+<div class="container py-4">
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Codigo de Servicio</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Duracion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for servicio in servicios %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ servicio.0 }}</td>
+        <td>{{ servicio.1 }}</td>
+        <td>{{ servicio.2 }}</td>
+        <td>{{ servicio.3 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

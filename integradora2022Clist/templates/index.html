@@ -1,0 +1,41 @@
+{% extends './base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <h1>Bienvenido a CLIST</h1>
+    <br/>
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <div class="col-3 bg-opacity-10">
+            <img src="{{ url_for('static', filename='img/clist-logo.png') }}" width="200">
+        </div>
+        <div class="col-9 bg-opacity-10">
+            <h5>Somos una clínica dental integral: contamos con especialistas en todas las ramas de la odontología, certificados por los diferentes consejos a nivel mundial, lo que nos permite ofrecer una práctica de excelencia multidisciplinaria..</h5><br/>
+            <br/>
+            <h5>CLIST Clínica Dental fue fundada en 1990 por el Dr. Jorge Parás Ayala, especialista en rehabilitación y prótesis bucal. Posteriormente se incorporó el Dr. Rodrigo Parás Salas, especialista en estética dental, rehabilitación de implantes.</h5>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-4 bg-opacity-10">
+                <img src="{{ url_for('static', filename='img/clist1.jfif') }}" width="350">
+            </div>
+            <div class="col-4 bg-opacity-10">
+                <img src="{{ url_for('static', filename='img/clist2.jpg') }}" width="350">
+            </div>
+            <div class="col-4 bg-opacity-10">
+                <img src="{{ url_for('static', filename='img/clist3.jpg') }}" width="350">
+            </div>
+        </div>
+    </div>
+
+</div>
+  
+  
+  {% endblock %}

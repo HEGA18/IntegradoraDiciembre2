@@ -1,0 +1,36 @@
+{% extends './base.html' %}
+
+{% block title %}registros{% endblock %}
+
+{% block body %}
+
+<h1>Seccion de Horarios</h1>
+
+<div class="container py-4">
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Codigo de Horario</th>
+        <th scope="col">Tipo Horario</th>
+        <th scope="col">Hora de Inicio</th>
+        <th scope="col">Hora de Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for horario in horarios %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ horario.0 }}</td>
+        <td>{{ horario.1 }}</td>
+        <td>{{ horario.2 }}</td>
+        <td>{{ horario.3 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

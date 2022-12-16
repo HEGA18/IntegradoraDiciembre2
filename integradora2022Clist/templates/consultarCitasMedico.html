@@ -1,0 +1,57 @@
+{% extends './base-medicos.html' %}
+
+{% block title %}registros{% endblock %}
+
+{% block body %}
+
+<h1>Seccion de citas Medico</h1>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container py-4">
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Id Cita</th>
+        <th scope="col">Id clinica</th>
+        <th scope="col">Id Consultorio</th>
+        <th scope="col">Id empleado</th>
+        <th scope="col">Fecha y hora</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cita in citas %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ cita['id'] }}</td>
+        <td>{{ cita['id_clinica'] }}</td>
+        <td>{{ cita['id_consultorio'] }}</td>
+        <td>{{ cita['id_empleado'] }}</td>
+        <td>{{ cita['fecha_y_hora'] }}</td>
+        <td>{{ cita['nombre_paciente'] }}</td>
+        <td>{{ cita['telefono'] }}</td>
+        <td>{{ cita['tipo_servicio'] }}</td>
+        <td>{{ cita['estado_servicio'] }}</td>
+        <td>
+          <a href="/EditarCitasMedico/{{ cita['id'] }}">Editar</a>
+      </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}
